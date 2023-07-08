@@ -1,0 +1,23 @@
+.program neo_pixel
+
+
+
+pull
+mov x, ~osr
+pull
+mov y, osr
+jmp test
+incr:
+    jmp x-- test
+test:
+    jmp y-- incr
+    mov isr, ~x
+    push
+
+% c-sdk {
+static inline void neo_pixel_program_init(PIO pio,uint sm uint offset){
+    pio_sm_config c = neo_pixel_program_get_default_config(offset);
+    
+
+}
+%}
